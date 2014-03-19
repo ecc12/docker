@@ -6,7 +6,6 @@ RUN cd /etc/yum.repos.d && wget http://www.hop5.in/yum/el6/hop5.repo
 ADD config /etc/selinux/config
 RUN yum -y install docker-io
 RUN echo "none /sys/fs/cgroup cgroup defaults 0 0" >> /etc/fstab
-ADD sshd /etc/pam.d/sshd
 
 # From https://github.com/jpetazzo/dind/blob/master/wrapdocker
 ADD ./wrapdocker /usr/local/bin/wrapdocker
