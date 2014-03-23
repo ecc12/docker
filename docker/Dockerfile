@@ -15,5 +15,5 @@ VOLUME /var/lib/docker
 EXPOSE 4243
 ADD start.sh /start.sh
 
-ENTRYPOINT ["/start.sh"]
+CMD ["/start.sh"]
 

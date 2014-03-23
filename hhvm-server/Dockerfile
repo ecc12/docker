@@ -11,5 +11,5 @@ VOLUME ["/var/www"]
 EXPOSE 80
 ADD start.sh /start.sh
 
-ENTRYPOINT ["/start.sh"]
+CMD ["/start.sh"]
 
