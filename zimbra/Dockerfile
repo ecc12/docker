@@ -6,6 +6,8 @@ RUN mkdir /tmp/zcs && cd /tmp/zcs && wget -O- http://files2.zimbra.com/downloads
 ADD config.defaults /tmp/zcs/config.defaults
 ADD utilfunc.sh.patch /tmp/zcs/utilfunc.sh.patch
 RUN cd /tmp/zcs/zcs-* && patch util/utilfunc.sh </tmp/zcs/utilfunc.sh.patch
+RUN cd /tmp/zcs/zcs-* && ./install.sh -s --platform-override /tmp/zcs/config.defaults
+RUN mv /opt/zimbra /opt/.zimbra
 
 VOLUME ["/opt/zimbra"]
 
