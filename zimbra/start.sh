@@ -1,9 +1,9 @@
 #!/bin/sh
 
 ls /opt/zimbra/installed-by-docker || (
-mkdir -p /opt/zimbra
+mkdir /opt/zimbra
 chown zimbra. /opt/zimbra
-mv /opt/.zimbra/{*,.*} /opt/zimbra/
+cp -a -r --sparse=always /opt/.zimbra/{.*,*} /opt/zimbra/ && rm -rf /opt/.zimbra
 sed -i "s/XHOSTNAMEX/`hostname -f`/" /tmp/zcs/config.defaults
 sed -i "s/XPASSWORDX/`date | sha1sum | cut -c-8`/" /tmp/zcs/config.defaults
 sed -i "s/XPASSWORD2X/`date | sha1sum | cut -c-8`/" /tmp/zcs/config.defaults
