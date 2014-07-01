@@ -1,8 +1,0 @@
-459c459
-<     if ! /usr/bin/getent hosts 127.0.0.1 | perl -ne 'if (! m|^\d+\.\d+\.\d+\.\d+\s+localhost\s*| && ! m|^\d+\.\d+\.\d+\.\d+\s+localhost\.localdomain\s*|) { exit 11;}'; then
----
->     if false; then
-518c518
-<     if [ `echo ${H_LINE} | awk '{ print NF }'` -lt 2 -o ${INVALID_IP} -eq 1 ]
----
->     if false
